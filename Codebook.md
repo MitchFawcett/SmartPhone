@@ -68,9 +68,7 @@
 		</TD>
 	</TR>
 	<TR>
-		<TD HEIGHT=22>
-			<P ALIGN=LEFT><FONT FACE="Courier New">4 through 69.</FONT></P>
-		</TD>
+		
 		<TD>
 			<P><BR>
 			</P>
