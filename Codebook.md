@@ -1,13 +1,13 @@
 # SmartPhone Codebook
 
 ## Explanation of output file dsSummaryMRF.txt
-                Column Heading 
-1                ActivityLabel
-2                 ActivityText
-3                      Subject
-4            tBodyAcc.mean...X
-5            tBodyAcc.mean...Y
-6            tBodyAcc.mean...Z
+                Column Heading   
+1                ActivityLabel  
+2                 ActivityText  
+3                      Subject  
+4            tBodyAcc.mean...X  
+5            tBodyAcc.mean...Y  
+6            tBodyAcc.mean...Z  
 7         tGravityAcc.mean...X
 8         tGravityAcc.mean...Y
 9         tGravityAcc.mean...Z
