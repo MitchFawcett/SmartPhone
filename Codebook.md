@@ -1,5 +1,5 @@
 # SmartPhone Codebook
-## Explanation of dsSummaryMRF.txt
+
 Source data for the assignment was provided at this location:
  https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
 
