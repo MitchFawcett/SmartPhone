@@ -1,44 +1,73 @@
 # SmartPhone Codebook
 
-Goal of the project is to summarize data files containing sensor data in the way requested by the instructor.
-
-Source data for the assignment was provided at this location:
- https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
-
-Source data files used by my solution:
-* activity_labels.txt 
-* features.txt
-* subject_test.txt
-* subject_train.txt
-* X_test.txt
-* X_train.txt
-* y_test.txt
-* y_train.txt
-
-Source data files not used: 
-* Files in the Inertial Signals folders. 
- 
-The exluded source files were not seen to be critical to the dataset requested by the instructor. The dimensions of the set of files that I chose to use were dimensionally consistent with one another and "made sense". The inertial files seemed to be extraneous to the assignment and the FAQ appeared to confirm this.
-
-Additional codebook information describing the source data used by this project was provided by the vendor in their README.TXT and features_info.txt files. 
-
-See my Readme.md markup file at https://github.com/MitchFawcett/SmartPhone for information about my solution that you cannot find here.
-
-There were basically five components of the source data that needed to be combined into a single dataframe for analysis.  
-1. measurement data - files: X_test and X_train. These are the numeric values from smart phone accelerometer.   
-2. subject identifier data - files: subject_test and subject_Train.  These are integer values 1 to 30 identifying people performing activities with the smart phone.  
-3. activity identifier data - files: y_test and y_train.  These are integer values 1 to 6 identifying the activity being performed by the subject (sitting, standing etc).  
-4. column headings for the measurement data - file: features. Descriptions for the kinds accelerometer readings.  
-5. activity descriptions - file: activity_Labels.  Descriptive terms for each of the 6 activity types.
-
-The source data was supplied in the form of a "training" set of data and a "testing" set of data.  For purposes of the assignment these two sets were row merged into one contiguous dataset.
-
-Once the source data files were merged I had a single data frame with three factor columns (activitylabel, activitydescription and subject) and 561 numeric data columns and 10299 rows. (The number of rows matched what the vendor had said on their web site was the number of observations in their data and the number of numeric data columns matched what the vendor said in their features_info.txt file.)
-
-The combined dataset was then manipulated to produce the final output file which I called dsSummaryMRF.txt.
-
-
-
- 
-
-
+## Explanation of output file dsSummaryMRF.txt
+                Column Heading 
+1                ActivityLabel
+2                 ActivityText
+3                      Subject
+4            tBodyAcc.mean...X
+5            tBodyAcc.mean...Y
+6            tBodyAcc.mean...Z
+7         tGravityAcc.mean...X
+8         tGravityAcc.mean...Y
+9         tGravityAcc.mean...Z
+10       tBodyAccJerk.mean...X
+11       tBodyAccJerk.mean...Y
+12       tBodyAccJerk.mean...Z
+13          tBodyGyro.mean...X
+14          tBodyGyro.mean...Y
+15          tBodyGyro.mean...Z
+16      tBodyGyroJerk.mean...X
+17      tBodyGyroJerk.mean...Y
+18      tBodyGyroJerk.mean...Z
+19          tBodyAccMag.mean..
+20       tGravityAccMag.mean..
+21      tBodyAccJerkMag.mean..
+22         tBodyGyroMag.mean..
+23     tBodyGyroJerkMag.mean..
+24           fBodyAcc.mean...X
+25           fBodyAcc.mean...Y
+26           fBodyAcc.mean...Z
+27       fBodyAccJerk.mean...X
+28       fBodyAccJerk.mean...Y
+29       fBodyAccJerk.mean...Z
+30          fBodyGyro.mean...X
+31          fBodyGyro.mean...Y
+32          fBodyGyro.mean...Z
+33          fBodyAccMag.mean..
+34  fBodyBodyAccJerkMag.mean..
+35     fBodyBodyGyroMag.mean..
+36 fBodyBodyGyroJerkMag.mean..
+37            tBodyAcc.std...X
+38            tBodyAcc.std...Y
+39            tBodyAcc.std...Z
+40         tGravityAcc.std...X
+41         tGravityAcc.std...Y
+42         tGravityAcc.std...Z
+43        tBodyAccJerk.std...X
+44        tBodyAccJerk.std...Y
+45        tBodyAccJerk.std...Z
+46           tBodyGyro.std...X
+47           tBodyGyro.std...Y
+48           tBodyGyro.std...Z
+49       tBodyGyroJerk.std...X
+50       tBodyGyroJerk.std...Y
+51       tBodyGyroJerk.std...Z
+52           tBodyAccMag.std..
+53        tGravityAccMag.std..
+54       tBodyAccJerkMag.std..
+55          tBodyGyroMag.std..
+56      tBodyGyroJerkMag.std..
+57            fBodyAcc.std...X
+58            fBodyAcc.std...Y
+59            fBodyAcc.std...Z
+60        fBodyAccJerk.std...X
+61        fBodyAccJerk.std...Y
+62        fBodyAccJerk.std...Z
+63           fBodyGyro.std...X
+64           fBodyGyro.std...Y
+65           fBodyGyro.std...Z
+66           fBodyAccMag.std..
+67   fBodyBodyAccJerkMag.std..
+68      fBodyBodyGyroMag.std..
+69  fBodyBodyGyroJerkMag.std..
