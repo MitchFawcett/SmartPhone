@@ -43,10 +43,6 @@ The combined dataset was then manipulated to produce the final output file which
 
 The instructions called for calculating the average of mean and standard deviation values found in the source data.  The following R code can be used to identify the columns that we need.  I looked for data fields with the string "-mean()" and "-std()".
 
-allcol <- features
-toMatch <- c("-std\\(", "-mean\\(")
-matches <- grep(paste(toMatch,collapse="|"),  allcol$V2, value=TRUE)
-
 For the purpose of this assignment all steps for the solution are containined in one
 script file for convenience.  In real life, the source data download might be in a separate
 script, the initial loading of source data frames might be in another script and
