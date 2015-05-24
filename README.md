@@ -57,7 +57,9 @@ ds <- ysd[,c("ActivityLabel", "Subject", matchcols(ysd, with = c("-mean\\(", "-s
 I added the activity description column by first creating a dataframe of descriptors corresponding to each row's activity label (number 1-6).  I did this using a sqldf function:  
 activityText <- sqldf("Select activityLabels.V2 from ds JOIN activityLabels ON ds.ActivityLabel = activityLabels.V1")
 
-I then used cbind to add it to the main data frame in the second column poistion:  
+The source data used puctuation characters in the feature names which R converts to dots when I added them as column headings to my dataset.  The Code book contains a mapping between the column names used by Samsung and the cleaned up column names assigned by R.  Example: Samsung column "fBodyGyro-std()-Z"  =  R cleansed column "fBodyGyro.std...Z"
+
+I then used cbind to add it to the main data frame in the second column position:  
 ds <- data.frame(ds[1:1], activityText, ds[-c(1:1)])  
 
 Once I had the activity descriptors inserted I grouped by activity and then by subject within activity to calculate the average of each of the numeric data columns:  
