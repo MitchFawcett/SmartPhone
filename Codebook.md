@@ -22,5 +22,13 @@ The exluded source files were not seen to be critical to the dataset requested b
 
 Additional codebook information describing the source data used by this project was provided by the vendor in their README.TXT and features_info.txt files. 
 
-See my Readme.md markup file at 
+See my Readme.md markup file at https://github.com/MitchFawcett/SmartPhone for information about my solution that you cannot find here.
+
+There were basically three components of the source data that needed to be combined into a single dataframe for analysis.
+1. measurement data (numeric values from smart phone accelerometer) - files X_test and X_train
+2. subject (people performing activities with the smart phone) identifier data - files subject_test and subject_Train
+3. activity identifier data (sitting, standing etc) - files y_test and y_Train
+
+ 
+
 
