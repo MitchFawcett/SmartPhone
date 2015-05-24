@@ -1,5 +1,7 @@
 # SmartPhone Codebook
 
+Goal of the project is to summarize data files containing sensor data in the way requested by the instructor.
+
 Source data for the assignment was provided at this location:
  https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
 
@@ -16,6 +18,9 @@ Source data files used by my solution:
 Source data files not used: 
 * Files in the Inertial Signals folders. 
  
-These were not seen to be critical to the dataset requested by the instructor. The dimensions of the set of files that I chose to use were consistent with one another and "made sense". The inertial files seemed to be extraneous to the assignment and the FAQ appeared to confirm this.
+The exluded source files were not seen to be critical to the dataset requested by the instructor. The dimensions of the set of files that I chose to use were dimensionally consistent with one another and "made sense". The inertial files seemed to be extraneous to the assignment and the FAQ appeared to confirm this.
 
+Additional codebook information describing the source data used by this project was provided by the vendor in their README.TXT and features_info.txt files. 
+
+See my Readme.md markup file at 
 
