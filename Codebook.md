@@ -33,9 +33,10 @@ There were basically five components of the source data that needed to be combin
 
 The source data was supplied in the form of a "training" set of data and a "testing" set of data.  For purposes of the assignment these two sets were row merged into one contiguous dataset.
 
-Once the source data files merged merged I had a single data frame with three factor columns (activitylabel, activitydescription and subject) and 561 data columns and 10299 rows. (The number of rows matched what the vendor had said on their web site was the number of observations in their data.)
+Once the source data files were merged I had a single data frame with three factor columns (activitylabel, activitydescription and subject) and 561 numeric data columns and 10299 rows. (The number of rows matched what the vendor had said on their web site was the number of observations in their data and the number of numeric data columns matched what the vendor said in their features_info.txt file.)
 
 The combined dataset was then manipulated to produce the final output file which I called dsSummaryMRF.txt.
+
 
 
  
