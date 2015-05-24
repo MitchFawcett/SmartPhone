@@ -4,8 +4,8 @@ Source data for the assignment was provided at this location:
  https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
 
 Source data files used by my solution:
-*activity_labels.txt 
-*features.txt
+* activity_labels.txt 
+* features.txt
 *subject_test.txt
 *subject_train.txt
 *X_test.txt
