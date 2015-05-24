@@ -24,10 +24,19 @@ Additional codebook information describing the source data used by this project 
 
 See my Readme.md markup file at https://github.com/MitchFawcett/SmartPhone for information about my solution that you cannot find here.
 
-There were basically three components of the source data that needed to be combined into a single dataframe for analysis.  
-1. measurement data (numeric values from smart phone accelerometer) - files X_test and X_train  
-2. subject (people performing activities with the smart phone) identifier data - files subject_test and subject_Train  
-3. activity identifier data (sitting, standing etc) - files y_test and y_Train  
+There were basically five components of the source data that needed to be combined into a single dataframe for analysis.  
+1. measurement data - files: X_test and X_train. These are the numeric values from smart phone accelerometer.   
+2. subject identifier data - files: subject_test and subject_Train.  These are integer values 1 to 30 identifying people performing activities with the smart phone.  
+3. activity identifier data - files: y_test and y_train.  These are integer values 1 to 6 identifying the activity being performed by the subject (sitting, standing etc).  
+4. column headings for the measurement data - file: features. Descriptions for the kinds accelerometer readings.  
+5. activity descriptions - file: activity_Labels.  Descriptive terms for each of the 6 activity types.
+
+The source data was supplied in the form of a "training" set of data and a "testing" set of data.  For purposes of the assignment these two sets were row merged into one contiguous dataset.
+
+Once the source data files merged merged I had a single data frame with three factor columns (activitylabel, activitydescription and subject) and 561 data columns and 10299 rows. (The number of rows matched what the vendor had said on their web site was the number of observations in their data.)
+
+The combined dataset was then manipulated to produce the final output file which I called dsSummaryMRF.txt.
+
 
  
 
