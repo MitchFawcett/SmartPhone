@@ -1,16 +1,16 @@
-# SmartPhone Codebook
+# SmartPhone Codebook  
 
-names.dsSummaryMRF.	
-May 25, 2015	
-Prepared by M. Fawcett	
+names.dsSummaryMRF  	
+May 25, 2015  	
+Prepared by M. Fawcett  	
 	
 	
 	
 	
-1                ActivityLabel	
-2                 ActivityText	
-3                      Subject	
-4            tBodyAcc.mean...X	           tBodyAcc-mean()-X
+1                ActivityLabel  	
+2                 ActivityText  	
+3                      Subject  	
+4            tBodyAcc.mean...X	           tBodyAcc-mean()-X  
 5            tBodyAcc.mean...Y	           tBodyAcc-mean()-Y
 6            tBodyAcc.mean...Z	           tBodyAcc-mean()-Z
 7         tGravityAcc.mean...X	        tGravityAcc-mean()-X
