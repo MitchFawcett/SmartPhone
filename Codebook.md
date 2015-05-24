@@ -56,7 +56,7 @@
 	<TR>
 		<TD HEIGHT=22>
 			<P ALIGN=LEFT><FONT FACE="Courier New">See Vendor documentation
-			for specific meanings of columns</FONT></P>
+			for specific meanings of columns 4 through 69.</FONT></P>
 		</TD>
 		<TD>
 			<P><BR>
