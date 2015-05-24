@@ -16,7 +16,7 @@
 	<COL WIDTH=113>
 	<TR>
 		<TD WIDTH=349 HEIGHT=22>
-			<P ALIGN=LEFT><FONT FACE="Courier New">dsSummaryMRF.txt</FONT></P>
+			<P ALIGN=LEFT><FONT FACE="Courier New">Dataset:  dsSummaryMRF.txt</FONT></P>
 		</TD>
 		<TD WIDTH=282>
 			<P><BR>
