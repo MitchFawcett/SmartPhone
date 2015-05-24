@@ -49,7 +49,7 @@
 ## a task would potentially be harmful.  In this case the source data is unlikely to change so
 ## reloading it each time this script is run is considered safe.
 #################################################################################################
-## Make sure needed library are available
+## Make sure needed functions are available
 ## sessionInfo()
 
 ## plyr package needed for arrange()
@@ -134,8 +134,13 @@ names(ysd) <- ch
 
 ## 2. Extracts only the measurements on the mean and standard deviation for each measurement. 
 # Identify data columns involving means and standard deviations using a gdata function.
-# Also, provide column headings for activity and subject labels. matchcols in gdata package.
-ds <- ysd[,c("ActivityLabel", "Subject", matchcols(ysd, with = c("-mean\\(", "std\\("), method = c("or")))] 
+# Also, provide column headings for activity and subject labels. Use matchcols in gdata package.
+ds <- ysd[,c("ActivityLabel", "Subject", matchcols(ysd, with = c("-mean\\(", "-std\\("), method = c("or")))] 
+
+## The above works because I had added the column headings contained in the features.txt file previously.
+## The result is a narrower data set containing just columns for std() and mean() measures.
+## The downside is the features.tx values contains unallowed punctuation characters.
+## R will turn these into dots in the output file.  I'll provide a mapping in the codebook.
 
 ## Note:  There are data features involving "mean freq" or "gravity mean". My 
 ## interpretation of the problem is that those are not to be included in the tidy dataset.
