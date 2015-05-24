@@ -39,6 +39,11 @@ Once the source data files were merged I had a single data frame with three fact
 
 The combined dataset was then manipulated to produce the final output file which I called dsSummaryMRF.txt.
 
+The instructions called for calculating the average of mean and standard deviation values found in the source data.  The following R code can be used to identify the columns that we need.  
+
+allcol <- features
+toMatch <- c("-std\\(", "-mean\\(")
+matches <- grep(paste(toMatch,collapse="|"),  allcol$V2, value=TRUE)
 
 
  
