@@ -10,10 +10,12 @@ Source data files used by my solution:
 * subject_train.txt
 * X_test.txt
 * X_train.txt
-* y_test.txt 
+* y_test.txt
 * y_train.txt
 
- Source data files not used: Files in the Inertial Signals folders.  
+ Source data files not used: 
+ * Files in the Inertial Signals folders. 
+ 
  These were not seen to be critical to the dataset requested by the instructor. The dimensions
  of the set of files that I chose to use were consistent with one another and "made sense". 
  The inertial files seemed to be extraneous to the assignment. The FAQ appeared to confirm this.
