@@ -7,6 +7,8 @@ Goal of the project is to summarize data files containing Samsung smart phone ac
 Source data for the assignment was provided at this location:
  https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
 
+Further documentation for this solution can be found in the Codebook.md and in the run_analysis.R script.
+
 Source data files used by my solution:
 * activity_labels.txt 
 * features.txt
@@ -39,11 +41,51 @@ Once the source data files were merged I had a single data frame with three fact
 
 The combined dataset was then manipulated to produce the final output file which I called dsSummaryMRF.txt.
 
-The instructions called for calculating the average of mean and standard deviation values found in the source data.  The following R code can be used to identify the columns that we need.  
+The instructions called for calculating the average of mean and standard deviation values found in the source data.  The following R code can be used to identify the columns that we need.  I looked for data fields with the string "-mean()" and "-std()".
 
 allcol <- features
 toMatch <- c("-std\\(", "-mean\\(")
 matches <- grep(paste(toMatch,collapse="|"),  allcol$V2, value=TRUE)
+
+For the purpose of this assignment all steps for the solution are containined in one
+script file for convenience.  In real life, the source data download might be in a separate
+script, the initial loading of source data frames might be in another script and
+data manipulation and output performed in yet another script.  Creating separate scripts makes
+sense when tasks need to be performed at different frequencies or when rerunning
+a task would potentially be harmful.  In this case the source data is unlikely to change so
+reloading it each time this script is run is considered safe.  
+  
+After combining the numeric data, row labels and column labels into one data frame I eliminated all the numeric data columns except the ones involving mean() and std() using:  
+ds <- ysd[,c("ActivityLabel", "Subject", matchcols(ysd, with = c("-mean\\(", "-std\\("), method = c("or")))] 
+  
+I added the activity description column by first creating a dataframe of descriptors corresponding to each row's activity label (number 1-6).  I did this using a sqldf function:  
+activityText <- sqldf("Select activityLabels.V2 from ds JOIN activityLabels ON ds.ActivityLabel = activityLabels.V1")
+
+I then used cbind to add it to the main data frame in the second column poistion:  
+ds <- data.frame(ds[1:1], activityText, ds[-c(1:1)])  
+
+Once I had the activity descriptors insered I grouped by activity and then by subject within activity to calculate the average of each of the numeric data columns:
+dsTemp <- aggregate(ds[, 4:ncol(ds)], list(ds$ActivityLabel, ds$ActivityText, ds$Subject), data = ds,  mean)
+
+The group aggregation created additional columns named Group.1, Group.2, Group.3 which I then approriately renamed:
+names(dsTemp)[1:3] <- c("ActivityLabel", "ActivityText", "Subject") 
+
+The final step in preparing the dataset was to reorder its rows by activity type and then by subject within activity type:
+dsSummary <- arrange(dsTemp, ActivityLabel, ActivityText, Subject)
+
+The dataset is then written to a text file in the working directory:
+write.table(dsSummary, "dsSummaryMRF.txt", row.name = FALSE)
+
+The data file can be viewed by doing the following:
+data <- read.table('dsSummaryMRF.txt', header = TRUE)
+View(data)
+
+
+
+
+
+
+
 
 
  
