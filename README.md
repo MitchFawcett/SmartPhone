@@ -64,12 +64,12 @@ activityText <- sqldf("Select activityLabels.V2 from ds JOIN activityLabels ON d
 I then used cbind to add it to the main data frame in the second column poistion:  
 ds <- data.frame(ds[1:1], activityText, ds[-c(1:1)])  
 
-Once I had the activity descriptors insered I grouped by activity and then by subject within activity to calculate the average of each of the numeric data columns:
-dsTemp <- aggregate(ds[, 4:ncol(ds)], list(ds$ActivityLabel, ds$ActivityText, ds$Subject), data = ds,  mean)
-
-The group aggregation created additional columns named Group.1, Group.2, Group.3 which I then approriately renamed:
-names(dsTemp)[1:3] <- c("ActivityLabel", "ActivityText", "Subject") 
+Once I had the activity descriptors inserted I grouped by activity and then by subject within activity to calculate the average of each of the numeric data columns:  
+dsTemp <- aggregate(ds[, 4:ncol(ds)], list(ds$ActivityLabel, ds$ActivityText, ds$Subject), data = ds,  mean)  
   
+The group aggregation created additional columns named Group.1, Group.2, Group.3 which I then approriately renamed:  
+names(dsTemp)[1:3] <- c("ActivityLabel", "ActivityText", "Subject")   
+    
 The final step in preparing the dataset was to reorder its rows by activity type and then by subject within activity type:  
 dsSummary <- arrange(dsTemp, ActivityLabel, ActivityText, Subject)  
   
