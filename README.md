@@ -69,16 +69,16 @@ dsTemp <- aggregate(ds[, 4:ncol(ds)], list(ds$ActivityLabel, ds$ActivityText, ds
 
 The group aggregation created additional columns named Group.1, Group.2, Group.3 which I then approriately renamed:
 names(dsTemp)[1:3] <- c("ActivityLabel", "ActivityText", "Subject") 
-
-The final step in preparing the dataset was to reorder its rows by activity type and then by subject within activity type:
-dsSummary <- arrange(dsTemp, ActivityLabel, ActivityText, Subject)
-
-The dataset is then written to a text file in the working directory:
-write.table(dsSummary, "dsSummaryMRF.txt", row.name = FALSE)
-
-The data file can be viewed by doing the following:
-data <- read.table('dsSummaryMRF.txt', header = TRUE)
-View(data)
+  
+The final step in preparing the dataset was to reorder its rows by activity type and then by subject within activity type:  
+dsSummary <- arrange(dsTemp, ActivityLabel, ActivityText, Subject)  
+  
+The dataset is then written to a text file in the working directory:  
+write.table(dsSummary, "dsSummaryMRF.txt", row.name = FALSE)  
+  
+The data file can be viewed by doing the following:  
+data <- read.table('dsSummaryMRF.txt', header = TRUE)  
+View(data)  
 
 
 
